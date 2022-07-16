@@ -1,0 +1,7 @@
+declare lower;
+
+def AECont = if IsNaN(GetActualEarnings()) then AECont [1] else GetActualEarnings();
+def yearEarning = AECont [-252]; 
+def sub = if yearEarning < 0 then (0 - AECont) else (yearEarning - AECont);
+def diff = if yearEarning < 0 then ((sub / AECont) * 100) + 100 else (sub / AECont) * 100;
+plot data = Round(diff[252], 0);
