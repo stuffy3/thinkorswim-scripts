@@ -1,0 +1,3 @@
+declare lower;
+
+#This script will look at the revenue growth of the stocks year over year, just as the earnings one does with earnings per share.
